@@ -44,5 +44,12 @@ i=0; for f in *; do d=dir_$(printf %03d $((i/30+1))); mkdir -p $d; mv "$f" $d; l
 ```
 
 ### Step 5: Upload Text Files to the Document Library
-Visit the [AI21 Studio Document Library](https://studio.ai21.com/documents) and upload the organized text files.
-This step completes the integration, enabling to utilize Virgin Atlantic help center data with Contextual Answers.
+Iterate through the sub-folders and upload text files using the provided script:
+
+```bash
+bash <(curl -s https://raw.githubusercontent.com/AI21-demos/contextual-answers-for-virgin-atlantic-help-center/main/upload_files.sh) "your_api_key_here" "VirginAtlantic" "~/Desktop/virgin-help-center/txt-website/dir_001"
+bash <(curl -s https://raw.githubusercontent.com/AI21-demos/contextual-answers-for-virgin-atlantic-help-center/main/upload_files.sh) "your_api_key_here" "VirginAtlantic" "~/Desktop/virgin-help-center/txt-website/dir_002"
+...
+
+```
+This step automates the upload process, making Virgin Atlantic's help center data available for use with AI21's Contextual Answers.
